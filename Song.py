@@ -64,8 +64,9 @@ class Song(object):
     def part_of_speeach(self):
 
         os.environ["JAVA_HOME"] = "/usr/bin/java"
-        jar = '/home/ahmad/PycharmProjects/untitled1/stanford-postagger-2011-04-20/stanford-postagger.jar'
-        model = '/home/ahmad/PycharmProjects/untitled1/stanford-postagger-2011-04-20/models/left3words-wsj-0-18.tagger'
+        jar = '/home/ahmad/PycharmProjects/untitled1/stanford-postagger-full-2015-12-09/stanford-postagger.jar'
+        model = '/home/ahmad/PycharmProjects/untitled1/stanford-postagger-full-2015-12-09/models/arabic.tagger'
+        # model = '/home/ahmad/PycharmProjects/untitled1/stanford-postagger-2011-04-20/models/left3words-wasj-0-18.tagger'
         tagger = StanfordPOSTagger(model, jar)
         tagger.java_options = '-mx4096m'  ### Setting higher memory limit for long sentences
 
@@ -80,13 +81,20 @@ class Song(object):
 # Use for One time
 
 file = open("testfile.txt", "w")
-
-file.write("ليس العيب في أن نسقط ولكن العيب أن لا تستطيع النهوض ")
+#12
+file.write("ليس العيب في أن نسقط و لكن العيب أن لا تستطيع النهوض ")
+#9
 file.write("من احب الله ، رأى كل شي جميلا. ")
+#8
 file.write("الفاشلون يقولون: ان النجاح هو مجرد حظ ")
+#10
 file.write("لا تبصق في البئر ، فقد تشرب منه يوما. ")
-file.write(" يسرنا إعلامكم بإنضمام فروعنا التالية لخدمة عملائنا الكرام #يوم_السبت لتقديم أفضل خدماتنا المصرفية وذلك من الساعة 10:00 حتى 1:30 ظهراً. ")
+#8
+file.write(" يسرنا إعلامكم بإنضمام فروعنا التالية لخدمة عملائنا الكرام  ")
+#14
 file.write(" رسمياً : ريال مدريد سيواجه بايرن ميونخ في دور الربع النهائي لدوري أبطال أوروبا ")
+
+
 file.close()
 
 file = open("testfile.txt","r")
@@ -124,9 +132,9 @@ print ('\n------- part of speach ------------\n')
 print (my_song.part_of_speeach())
 
 
+
+
 print ('\n\n|IIIIIIIIIIIIII| Second Stage |IIIIIIIIIIIIII|\n\n ')
-
-
 
 print ('\n------- tokenizer ------------\n')
 print(my_song.tokenizer())
@@ -154,9 +162,3 @@ print (my_song.part_of_speeach())
 
 
 
-
-
-# happy_bday.sing_me_a_song()
-#-
-# bulls_on_parade.sing_me_a_song()
-#
